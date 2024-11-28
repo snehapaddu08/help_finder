@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disaster Assistance</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Help Finder</h1>
+    <p>Your Safety Our Priority</p>
+  </header>
+
+  <main>
+    <section id="location">
+      <!-- <button onclick="getLocation()">Share</button> -->
+      <!-- <p>Click the button to get your coordinates.</p> -->
+      <!-- <p id="demos"></p> -->
+      <h1>Location Services</h1>
+      <p>live location:</p>
+      <button><a href="index6.html">Your Location</a></button>
+      <p id="demo"></p>
+      
+    </section>
+
+    <section id="sos">
+      <h2>Emergency SOS</h2>
+      <button onclick="sendSOS()"> <a href="index2.html"> Send Emergency SOS</a></button>
+      <p id="sosMessage"></p>
+      
+    </section>
+
+    <section id="medical">
+      <h2>Medical Facilities</h2>
+      <p>Find nearby medical help:</p>
+      <button onclick="findMedical()"> <a href="index3.html">Search Medical Facilities </a></button>
+      <p id="medicalOutput"></p>
+    </section>
+
+    <section id="food">
+      <h2>Food Resources</h2>
+      <p>Find food distribution centers:</p>
+      <button onclick="findFood()"> <a href="inde4.html">Search Food Centers </a></button>
+      <p id="foodOutput"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Stay safe. We are here to help.</p>
+  </footer>
+  <script>
+    const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+}
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

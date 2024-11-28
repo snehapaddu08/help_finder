@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Popup container - can be anything you want */
+.hi{
+  background-color: #fa310e;
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fa310e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 06px;
+    cursor: pointer;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+</head>
+<body style="text-align:center">
+
+<h2>General Emergency Services</h2>
+<p>Select a service to get contact information:</p>
+<button class="hi">
+  <div class="popup" onclick="myFunction()">Ambulance
+  <span class="popuptext" id="myPopup">Notified 108</span>
+</div>
+</button>
+
+<button class="hi">
+  <div class="popup" onclick="myFunction1()">Police
+  <span class="popuptext" id="myPopup1">Notified 100</span>
+</div>
+</button>
+<button class="hi">
+  <div class="popup" onclick="myFunction2()">Fire brigade
+  <span class="popuptext" id="myPopup2">Notified 101</span>
+</div>
+</button>
+<button class="hi">
+  <div class="popup" onclick="myFunction3()">Disaster helpline
+  <span class="popuptext" id="myPopup3">Notified to the team </span>
+</div>
+</button>
+
+
+<script>
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+function myFunction1() {
+  var popup = document.getElementById("myPopup1");
+  popup.classList.toggle("show");
+}
+function myFunction2() {
+  var popup = document.getElementById("myPopup2");
+  popup.classList.toggle("show");
+}
+function myFunction3() {
+  var popup = document.getElementById("myPopup3");
+  popup.classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

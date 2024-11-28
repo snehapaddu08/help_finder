@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <center>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Resources</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+  <header>
+    <h1>Food Resources</h1>
+    <p>Find nearby food distribution centers to help during emergencies.</p>
+  </header>
+
+    
+  </section>
+  <main>
+    <section id="location">
+      <!-- <button onclick="getLocation()">Share</button> -->
+      <!-- <p>Click the button to get your coordinates.</p> -->
+      <!-- <p id="demos"></p> -->
+      <h4>Location Services</h4>
+      <button>
+      <a href="index6.html">Your Location</a></button>
+      <p id="demo"></p>
+
+    <section id="food-resources">
+      <h4>Available Food Resources</h4>
+      <button onclick="showNearestFood()">Show Nearest Food Centers</button>
+      <div id="nearestFood" style="display: none;">
+        <p>
+          <li>Community Food Bank - 2 km away</li>
+          <li>City Relief Center - 3 km away</li>
+          <li>Neighborhood Donation Center - 5 km away</li>        </p>
+      </div>
+    </section>
+    
+
+    <section id="hidden-food">
+      <h4>Additional Food Resources</h4>
+      <button onclick="toggleHiddenFood()">Toggle Additional Resources</button>
+      <div id="hiddenFood" style="display: none;">
+        <p>
+          <li>Private Charity Group - 6 km away</li>
+          <li>Remote Village Food Assistance - 10 km away</li>
+        </p>
+      </div>
+    </section>
+  </main>
+
+ 
+
+  <script src="script4.js"></script>
+</body>
+</center>
+</html>

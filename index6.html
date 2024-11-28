@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embed Wikimap with Current Location</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif   ;
+    }
+    h1{
+        text-align: center;
+    }
+
+</style>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="cont">
+        <h1>OpenStreetMap with Current Location</h1>
+    </div>
+    <div class="map1">
+        <div id="map" style="width: 1800px; height: 600px;"></div>
+    </div>
+  <br>
+  <a href="https://www.openstreetmap.org" target="_blank">View Full Map</a>
+</body>
+</html>
+<script>
+    // Create the map centered at a default location (e.g., London)
+    var map = L.map('map').setView([51.5074, -0.1278], 13); // Default to London
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Function to get the current location of the user
+    function getCurrentLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat = position.coords.latitude;
+          var lon = position.coords.longitude;
+
+          // Update the map to the user's location
+          map.setView([lat, lon], 13);
+
+          // Add a marker at the user's location
+          L.marker([lat, lon]).addTo(map)
+            .bindPopup("You are here!")
+            .openPopup();
+        }, function() {
+          alert("Geolocation failed or permission denied.");
+        });
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    // Call the function to get the user's location
+    getCurrentLocation();
+  </script>

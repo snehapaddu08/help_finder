@@ -1,0 +1,30 @@
+#medical button {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    background: #ff5722;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #medical button:hover {
+    background: #e64a19;
+  }
+  
+  #nearestMedical, #hiddenMedical {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #nearestMedical ul, #hiddenMedical ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  #nearestMedical li, #hiddenMedical li {
+    margin: 0.5rem 0;
+  }
